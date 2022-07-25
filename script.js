@@ -56,5 +56,21 @@ if (isRaining || temperature < 10 || temperature > 35) {
    minutes = 20;
 }
 
+// FizzBuzz
 
+let number = 15;
+let taskResult;
+
+let divisionThree = number % 3;
+let divisionFive = number % 5;
+
+if (!divisionThree && !divisionFive) {
+   taskResult = 'FizzBuzz';
+} else if (!divisionThree) {
+   taskResult = 'Fizz';
+} else if (!divisionFive) {
+   taskResult = 'Buzz';
+} else {
+   taskResult = number;
+};
 
