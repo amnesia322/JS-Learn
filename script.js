@@ -90,4 +90,15 @@ if (time >= 8 && time < 13 || time >= 14 && time < 19) {
    goToMarket = true;
 }
 
+//learn loops 
+
+let mode = 'pageCopy'; // Режим работы драйвера печати
+let pageNumber = 5; // Номер копируемой страницы
+let copyCount = 7; // Количество копий
+
+if (mode === 'pageCopy') {
+   for (let copies = 1; copies <= copyCount; copies++) {
+      keks.print(pageNumber)
+   }
+}
 
