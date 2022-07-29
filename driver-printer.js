@@ -45,3 +45,4 @@ if (mode === 'alternate') {
       }
       console.log(consumptionTotal);
    }
+}
