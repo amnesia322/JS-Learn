@@ -1,16 +1,29 @@
-let diceNumber = 2;
 
-let firstCatName = 'Кекс';
-let firstCatPoints = 0;
-
-let secondCatName = 'Рудольф';
-let secondCatPoints = 0;
-
-let runGame = function (quantity, firstPlayerName, firstPlayerPoints, secondPlayerName, secondPlayerPoints) {
-   firstPlayerPoints += keks.throwDice(quantity, quantity * 6);
-   secondPlayerPoints += keks.throwDice(quantity, quantity * 6);
-   console.log(firstPlayerName + ' выбросил ' + firstPlayerPoints);
-   console.log(secondPlayerName + ' выбросил ' + secondPlayerPoints);
+let gameRuleset = {
+   diceNumber: 2,
+   maxAttempts: 3
 };
 
-runGame(diceNumber, firstCatName, firstCatPoints, secondCatName, secondCatPoints);
+let firstCat = {
+   name: 'Кекс',
+   points: 0
+};
+
+let secondCat = {
+   name: 'Рудольф',
+   points: 0
+};
+
+let cats = [firstCat, secondCat];
+
+let runGame = function (ruleset, players) {
+   for (let i = 0; i < players.length; i++) {
+      let throwResult = keks.throwDice(ruleset.diceNumber, ruleset.diceNumber * 6);
+      players[i].points += throwResult;
+      console.log(players[i].name + ' выбросил ' + players[i].points);
+   }
+   return players;
+};
+
+cats = runGame(gameRuleset, cats);
+console.log(cats);
