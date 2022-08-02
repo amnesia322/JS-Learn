@@ -1,6 +1,6 @@
 let gameRuleset = {
-   diceNumber: 2,
-   maxAttempts: 3
+   diceNumber: 1,
+   maxAttempts: 1
 };
 
 let firstCat = {
@@ -50,6 +50,7 @@ let getWinners = function (players) {
    return winners;
 };
 
+
 let printWinners = function (players, winners) {
    if (players.length === winners.length) {
       console.log('Все коты как на подбор!');
@@ -57,17 +58,21 @@ let printWinners = function (players, winners) {
    }
 
    let message = 'Победил ';
-
+   if (winners.length > 1) {
+      message = 'Победили ';
+   }
    for (let i = 0; i < winners.length; i++) {
+      if (i >= 1) {
+         message += ', ';
+      }
       message += winners[i].name;
    }
+
    message += ' с количеством очков: ' + winners[0].points;
 
    console.log(message);
 };
 
 cats = runGame(gameRuleset, cats);
-console.log(cats);
 let tops = getWinners(cats);
-console.log(tops);
 printWinners(cats, tops);
