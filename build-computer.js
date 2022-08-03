@@ -1,3 +1,18 @@
+let processorPrice = {
+    'i5': 5000,
+    'i7': 10000
+};
+
+let displayPrice = {
+    13: 5000,
+    15: 10000
+};
+
+let memoryPrice = {
+    8: 3000,
+    16: 4000
+};
+
 let buildComputer = function (memory, display, processor) {
     let computer = {
         basicPrice: 5000,
@@ -10,7 +25,7 @@ let buildComputer = function (memory, display, processor) {
         },
 
         getPrice: function () {
-            return computer.basicPrice;
+            return computer.basicPrice + processorPrice[computer.processor] + displayPrice[computer.display] + memoryPrice[computer.memory];
         }
     };
 
