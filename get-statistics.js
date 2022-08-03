@@ -4,10 +4,8 @@ let getStatistics = function (players) {
         sumGoals += players[j].goals;
     }
     for (let i = 0; i < players.length; i++) {
-        let coefficient = players[i].goals * 2 + players[i].passes;
-        players[i].coefficient = coefficient;
-        let percent = Math.round(players[i].goals / (sumGoals / 100));
-        players[i].percent = percent;
+        players[i].coefficient = players[i].goals * 2 + players[i].passes;
+        players[i].percent =  Math.round(players[i].goals / (sumGoals / 100));
     }
     return players;
 };
