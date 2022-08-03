@@ -14,23 +14,26 @@ let memoryPrice = {
 };
 
 let buildComputer = function (memory, display, processor) {
-    let computer = {
+    let customComputer = {
         basicPrice: 5000,
         processor: processor,
         display: display,
         memory: memory,
 
         getDescription: function () {
-            return 'компьютер с процессором ' + computer.processor + ', диагональю ' + computer.display + ', оперативной памятью ' + computer.memory;
+            return 'компьютер с процессором ' + this.processor + ', диагональю ' + this.display + ', оперативной памятью ' + this.memory;
         },
 
         getPrice: function () {
-            return computer.basicPrice + processorPrice[computer.processor] + displayPrice[computer.display] + memoryPrice[computer.memory];
+            return this.basicPrice + processorPrice[this.processor] + displayPrice[this.display] + memoryPrice[this.memory];
         }
     };
 
-    return computer;
+    return customComputer;
 };
 
 let myComputer = buildComputer(8, 13, 'i7');
 console.log('В корзине ' + myComputer.getDescription() + ' стоимостью ' + myComputer.getPrice());
+
+let anotherComputer = buildComputer(16, 15, 'i5');
+console.log('В корзине ' + anotherComputer.getDescription() + ' стоимостью ' + anotherComputer.getPrice());
