@@ -10,3 +10,17 @@ let getPrice = function (time, isQuickly) {
     return time * rate;
 };
 
+function getProfitableProject(time, profitUrgent) {
+    let urgentValue = getPrice(time, true) - profitUrgent;
+    let notUrgentValue = getPrice(time, false);
+    let urgency = 'срочный';
+    let expences = urgentValue;
+
+    if (urgentValue > notUrgentValue) {
+        urgency = 'обычный';
+        expences = notUrgentValue;
+    }
+
+    return `Выгодней ${urgency} проект. Потратишь на него ${expences}`;
+}
+
