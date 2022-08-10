@@ -17,5 +17,10 @@ console.log(cardList.children);
 var title = makeElement('h2', 'product__title', 'Профессиональная селфи-палка');
 listItem.appendChild(title);
 
+var picture = makeElement('img', 'product__image');
+picture.src = 'device/item-4.jpg';
+picture.alt = 'Профессиональная селфи-палка'
+listItem.appendChild(picture);
+
 var price = makeElement('p', 'product__price', '1000');
 listItem.appendChild(price);
